@@ -50,11 +50,12 @@ export class TasksService {
   public getFilteredTasks(filter: GetTaskFilteredDto): Task[] {
     let tasks = this.getTasks();
     if (filter.status) {
-      tasks = tasks.filter(task => task.status === filter.status);
+      tasks = tasks.filter(task => task.status.includes(filter.status));
     }
     if (filter.search) {
       tasks = tasks.filter(task => {
-        return task.title.includes(filter.search) || task.description.includes(filter.search);
+        return task.title.toLowerCase().includes(filter.search.toLowerCase()) ||
+          task.description.toLowerCase().includes(filter.search.toLowerCase());
       });
     }
     return tasks;
