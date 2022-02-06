@@ -20,7 +20,10 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "client": "yarn start --prefix client",
+    "clientinstall": "yarn install --prefix client",
+    "fullstack": "concurrently \"yarn start\" \"yarn run client\""
   },
   "dependencies": {
     "@nestjs/common": "7.0.0",
@@ -52,6 +55,7 @@
     "@types/supertest": "2.0.8",
     "@typescript-eslint/eslint-plugin": "2.23.0",
     "@typescript-eslint/parser": "2.23.0",
+    "concurrently": "^7.0.0",
     "dotenv": "8.2.0",
     "eslint": "6.8.0",
     "eslint-config-prettier": "6.10.0",
@@ -80,6 +84,6 @@
     "testEnvironment": "node"
   },
   "engines": {
-    "node": "12.8.0"
+    "node": "14.17.5"
   }
 }

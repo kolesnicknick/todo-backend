@@ -9,4 +9,5 @@ export const ormconfig: TypeOrmModuleOptions = {
   type: 'postgres',
   autoLoadEntities: true,
   synchronize: true,
+  logging: true
 };

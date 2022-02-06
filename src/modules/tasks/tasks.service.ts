@@ -55,18 +55,4 @@ export class TasksService {
     return this.taskRepository.getTasks(filter, user);
   }
 
-  // public async getFilteredTasks(filter: GetTaskFilteredDto): Promise<Task[]> {
-  //   let tasks = await this.getTasks();
-  //   if (filter.status) {
-  //     tasks = tasks.filter(task => task.status.includes(filter.status));
-  //   }
-  //   if (filter.search) {
-  //     tasks = tasks.filter(task => {
-  //       return task.title.toLowerCase().includes(filter.search.toLowerCase()) ||
-  //         task.description.toLowerCase().includes(filter.search.toLowerCase());
-  //     });
-  //   }
-  //   return tasks;
-  // }
-
 }
